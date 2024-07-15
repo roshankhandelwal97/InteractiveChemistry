@@ -1,0 +1,322 @@
+/*START OF MOLECULE PAGE */
+
+/* Molecule image adjustments */
+.img-fluid {
+  max-width: 100%; /* Ensure full width but maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  width: auto; /* Adjust width automatically to maintain aspect ratio */
+}
+
+/* Molecule name text size increase */
+h2 {
+  font-size: 2rem; /* Increase font size for molecule name */
+  font-weight: bold; /* Make the molecule name bold */
+  color: rgb(241, 235, 235); /* Enhance text color for better readability */
+  margin-top: 1rem; /* Add space above the molecule name */
+}
+
+/* Molecule description text size and style */
+p {
+  font-size: 1.2rem; /* Slightly larger text for descriptions */
+  color: rgb(237, 230, 230); /* Soften the text color for better readability */
+}
+
+/* Adjust the column sizing to give more space for the image */
+.col-md-4 {
+  flex: 0 0 auto; /* Flex basis changes */
+  max-width: 80%; /* Giving more space for the image */
+}
+
+.col-md-6 {
+  flex: 0 0 auto;
+  max-width: 80%; /* Balance the space with the image column */
+}
+
+/* Transition for image hover */
+.img-fluid:hover {
+  opacity: 0.8; /* Slightly fade images on hover */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for the fade */
+}
+
+/* Enhance button interaction */
+.btn-primary {
+  background-color: #0056b3; /* A deep blue that matches the theme */
+  border: none; /* No border for a cleaner look */
+  padding: 10px 20px; /* Larger button for easier interaction */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.btn-primary:hover {
+  background-color: #003d82; /* Darken the button on hover for effect */
+}
+
+/*END OF MOLECULE PAGE */
+
+/*START OF 3D MODELS  */
+
+/* Fullscreen Modal overrides */
+.modal-dialog {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-animation-modal-dialog {
+  max-width: 90%; /* This sets the max width of the modal as a percent of the viewport width */
+}
+
+.animation-viewer-container {
+  /* Adjust dimensions as needed to fit the animation */
+  width: 100%;
+  max-width: 800px; /* Example fixed max width or use percentage */
+  height: auto; /* Adjust height based on the aspect ratio of the animation */
+  margin: auto; /* This will center the div if it has a width less than 100% */
+}
+
+.modal-body {
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: auto;
+  min-height: 300px; /* Set a minimum height or adjust as needed */
+}
+
+/* Make the modal content flex container to center the animation */
+.modal-content {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+
+/* Ensure the modal covers the entire viewport */
+.modal {
+  padding: 0 !important; /* Override Bootstrap padding for modal */
+}
+
+/* Optional: Reset padding and margin for modal header, footer */
+.modal-header, .modal-footer {
+  padding: 10px; /* or your preferred padding */
+}
+
+
+/* If the modal body needs to scroll */
+.modal-body {
+  overflow-y: auto; /* Allows vertical scrolling if content overflows */
+  flex-grow: 1; /* Takes up as much space as possible */
+}
+
+/* Specific settings to ensure full width in responsive settings */
+@media (max-width: 576px) {
+  .toggle-animation-button {
+    top: 72px; /* Adjust the top position based on header size */
+  }
+}
+
+/* Full width containers inside modal */
+.container, .row, .col {
+  width: 100%; /* Ensure they take full width */
+  max-width: none; /* Override any Bootstrap max-width */
+  padding-right: 0; /* Override Bootstrap padding */
+  padding-left: 0; /* Override Bootstrap padding */
+  margin-right: 0; /* Override Bootstrap margin */
+  margin-left: 0; /* Override Bootstrap margin */
+}
+
+/* Additional style adjustments for modal internals as per your existing design */
+.viewer-container, .animation-container {
+  width: 100%;
+  overflow: hidden; /* Prevent any overflow causing horizontal scroll */
+}
+
+.description-text {
+  width: 100%; /* Ensure it spans the full width */
+  background: rgba(255, 255, 255, 0.8); /* For readability */
+  padding: 1rem;
+  text-align: center;
+}
+
+
+/* Adjust close button position */
+.modal-header {
+  justify-content: space-between; /* Space between elements */
+}
+
+.modal-title {
+  flex-grow: 1; /* Allow title to fill space */
+}
+
+.close {
+  position: absolute; /* Absolute position */
+  right: 1rem; /* Positioned to the right */
+  top: 1rem; /* Positioned at the top */
+  z-index: 1051; /* Above all modal content */
+}
+
+.toggle-animation-button {
+  margin-left: auto; /* Pushes the button to the right */
+}
+
+.cursor-move {
+  cursor: move;
+}
+
+@media (max-width: 576px) {
+  .toggle-animation-button {
+    top: 112px; /* Positioned below the header on smaller screens */
+  }
+}
+
+/* Override Bootstrap modal padding */
+.modal-body, .modal-header, .modal-footer {
+  padding: 0; /* Remove padding */
+}
+
+
+/* Continue with existing styles... */
+
+/* Styles for a single viewer-container */
+.single-viewer .viewer-container {
+  position: relative;
+  margin-top: 2rem;
+}
+
+/* Styles for a single animation-container */
+.single-viewer .animation-container > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1); /* Debug background color */
+}
+
+/* Styles for multiple viewer-containers */
+.multiple-viewers .viewer-container {
+  margin-top: 2rem; /* Adjust as needed */
+  position: relative; /* Override any absolute positioning */
+}
+
+/* Additional styles for the MoleculeViewer container */
+.viewer-container > div {
+  height: 100%; /* Make sure the viewer takes up the full container height */
+  position: relative; /* Override absolute positioning if it was set globally */
+}
+
+
+/* Container for both the viewer and video to allow for responsive sizing */
+.animation-container {
+  position: relative; /* Context for absolute positioning */
+  padding-top: 2rem;
+  height: 50vh;
+}
+
+
+.viewer-container {
+  min-height: 300px; /* Ensures the viewer has enough space */
+}
+
+.viewer-container, .animation-container {
+  margin-bottom: 1rem; /* Space between viewers and other elements */
+}
+
+/* Enhance visibility and interaction */
+.viewer-container > div, .animation-viewer-container {
+  background-color: #f8f9fa; /* Light background for contrast */
+  border-radius: 0.25rem; /* Soften the edges */
+}
+
+.animation-container > div {
+  position: absolute; /* Absolute position for the viewer */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.animation-viewer-container {
+  width: 100%; /* Use the full width of the modal */
+  height: 85vh; /* Adjust the height to be a bit less than the modal to fit controls, etc. */
+  display: flex; /* Ensure it uses flex layout to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: rgba(0, 0, 0, 0.1); /* Maintain a light background for visibility */
+}
+
+/* Description text styling */
+.description-text {
+  margin-top: 1rem; /* Add some space above the description */
+  padding: 0 1rem; /* Add some padding on the sides */
+  text-align: center; /* Center the description text */
+}
+
+.background-cards {
+  position: fixed; /* Keeps the background cards in place while scrolling */
+  top: 0;
+  width: 100%;
+  z-index: 1; /* Lower than the foreground cards */
+  transition: transform 0.5s ease; /* Smooth transition for any changes */
+}
+
+.foreground-cards {
+  position: relative;
+  z-index: 2; /* Higher than the background cards */
+}
+
+/* Base state for initial cards, ensuring transitions are defined here */
+.initial-cards {
+  opacity: 1; /* Full opacity when not scrolled */
+  transform: scale(1); /* Normal size when not scrolled */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Ensure smooth transitions */
+}
+
+/* Adjusted state when scrolled */
+.scrolled .initial-cards {
+  opacity: 0.1; /* Make the initial cards more faded when scrolled */
+  transform: scale(0.7); /* More noticeably shrink the cards when scrolled */
+  /* Transition is already defined in the base state, so it's applied in both directions */
+}
+
+/* Base state for detail cards */
+.detail-cards {
+  opacity: 0.5; /* Start off less visible or offscreen */
+  transform: translateY(-50px); /* Start lower or offscreen */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Ensure smooth transitions */
+}
+
+/* Adjusted state when scrolled */
+.scrolled .detail-cards {
+  opacity: 1; /* Ensure detail cards are fully visible when scrolled */
+  transform: translateY(-200px); /* Move detail cards up when scrolled */
+  /* Transition is already defined in the base state, so it's applied in both directions */
+}
+.viewer-style-form {
+  margin-top: 1rem; /* Space above the form */
+}
+
+/* Ensure the radio buttons are visible */
+.viewer-style-form .form-check {
+  margin-right: 1rem; /* Space between radio buttons */
+}
+
+/* Add custom styles for your form elements if needed */
+.form-check-input {
+  /* Custom styles for radio inputs */
+}
+
+.form-check-label {
+  /* Custom styles for radio labels */
+}
+
+/* Ensure the viewer container has space for the form */
+.viewer-container {
+  margin-top: 1rem; /* Adjust as needed */
+}
+.form-group {
+  border: 1px solid red; /* Just for debugging */
+  background-color: lightyellow; /* Just for debugging */
+}

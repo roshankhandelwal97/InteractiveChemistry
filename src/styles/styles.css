@@ -1,0 +1,177 @@
+
+
+
+/* Styles for the buttons used to select molecules */
+.molecule-buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #2085ec;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+
+  /* Centers the content and sets up a column layout for the selection page */
+  .selection-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Parent container for the file selections and viewers */
+.files-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Individual file selection and its viewer */
+.file-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Adjust this to fit the content */
+    position: relative; /* This makes it the anchor point for absolutely positioned children */
+}
+
+/* The viewer itself */
+.molecule-viewer {
+    align-self: center;
+    max-width: 100%; /* Adjust this to fit the content */
+    margin-top: 10px;
+    position: relative; /* Anchor point for the canvas */
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 400px; /* Fixed width, or you could use max-width for responsiveness */
+    height: 400px; /* Fixed height for consistency */
+    margin: auto; /* Center the viewer */
+}
+
+/* Styles for the canvas inside the viewer */
+.molecule-viewer canvas {
+    width: 100%; /* This ensures the canvas fits the viewer */
+    height: 100%; /* Maintain the aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Custom styling for Bootstrap cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add shadow for depth */
+    transition: 0.3s; /* Smooth transition for mouse hover effect */
+    border-radius: 10px; /* Rounded corners for a softer look */
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Increased shadow on hover */
+  }
+  
+  .card-img-top {
+    border-radius: 10px 10px 0 0; /* Round the top corners of the image */
+  }
+  
+  .card-title {
+    color: #007bff; /* Theme color for titles */
+  }
+  
+  .card-text {
+    text-align: justify; /* Improve readability of the text */
+  }
+  
+  .card-body {
+    padding: 15px; /* Spacing inside the card */
+  }
+
+  /* Custom Checkbox Styles */
+.custom-checkbox {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+  }
+  
+  .custom-checkbox input[type="checkbox"] {
+    visibility: hidden;
+  }
+  
+  .custom-checkbox:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff;
+    border-radius: 3px;
+    background-color: transparent;
+  }
+  
+  .custom-checkbox input[type="checkbox"]:checked + label:before {
+    background-color: #007bff;
+  }
+  
+  .custom-checkbox label {
+    cursor: pointer;
+  }
+  
+  /* Flexbox for horizontal images */
+  .files-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between images */
+  }
+  
+  .file-viewer-container {
+    flex: 1 1 auto;
+  }
+  
+  /* Global styles.css or similar */
+
+/* Fullscreen wave background */
+.fullscreen-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.6;
+  background: linear-gradient(744deg, #00d8eb, #38cad2 60%, #3db6b6);
+  z-index: -1; /* Ensure it stays in the background */
+  animation: wave 10s infinite linear;
+  border-radius: 0; /* Optional, depending on desired effect */
+  animation: wave 50s infinite linear;
+  /* background-image: url('../background.svg'); */
+  background-size: cover;
+  background-position: center;
+  /* animation: slideWave 20s infinite linear; */
+}
+
+/* Animation for the wave */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes slideWave {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 100%;
+  }
+
+}
+
+  
