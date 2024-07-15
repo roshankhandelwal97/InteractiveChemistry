@@ -1,5 +1,30 @@
 
+:root {
+  --primary-color: #007bff;
+  --accent-color-green: #28a745;
+  --accent-color-red: #dc3545;
+  --accent-color-yellow: #ffc107;
+  --background-color-light: #5a6672;
+  --background-color-dark: #343a40;
+  --text-color-dark: #333;
+  --text-color-light: #fff;
+}
 
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color-light);
+  color: var(--text-color-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
 
 /* Styles for the buttons used to select molecules */
 .molecule-buttons {
@@ -7,13 +32,19 @@
 }
 
 button {
-    background-color: #2085ec;
-    color: white;
+    background-color:var(--primary-color);
+    color: var(--text-color-light);
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-right: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  button:hover {
+    background-color: darken(var(--primary-color), 10%);
+    transform: scale(1.05);
   }
 
   /* Centers the content and sets up a column layout for the selection page */
@@ -79,7 +110,7 @@ button {
   }
   
   .card-title {
-    color: #007bff; /* Theme color for titles */
+    color: var(--primary-color);
   }
   
   .card-text {
@@ -110,13 +141,13 @@ button {
     top: 0;
     width: 20px;
     height: 20px;
-    border: 2px solid #007bff;
+    border: 2px solid var(--primary-color);
     border-radius: 3px;
     background-color: transparent;
   }
   
   .custom-checkbox input[type="checkbox"]:checked + label:before {
-    background-color: #007bff;
+    background-color: var(--primary-color);
   }
   
   .custom-checkbox label {
@@ -174,4 +205,81 @@ button {
 
 }
 
-  
+/* SVGs */
+.chemistry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background-color: var(--background-color-dark);
+}
+
+.chemistry-icon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0.8;
+  animation: float 10s infinite ease-in-out, rotate 20s infinite linear, moveRandom 30s infinite ease-in-out;
+}
+
+.flask {
+  animation-duration: 12s, 25s, 40s;
+}
+
+.molecule {
+  animation-duration: 15s, 30s, 45s;
+}
+
+.test-tube {
+  animation-duration: 18s, 20s, 50s;
+}
+
+.beaker {
+  animation-duration: 20s, 22s, 55s;
+}
+
+.burner {
+  animation-duration: 22s, 24s, 60s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveRandom {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10vw, 10vh);
+  }
+  50% {
+    transform: translate(20vw, -10vh);
+  }
+  75% {
+    transform: translate(-10vw, 20vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

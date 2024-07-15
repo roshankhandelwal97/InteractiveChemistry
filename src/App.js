@@ -1,21 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import LandingPage from './components/LandingPage'; // Ensure the import path is correct
+import LandingPage from './components/LandingPage';
 import HomePage from './components/HomePage';
 import PureLipidSelectionPage from './components/PureLipidSelectionPage';
 import MixtureLipidSelectionPage from './components/MixtureLipidSelectionPage';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css';
-import { ReactComponent as ChemistrySVG } from './background.svg';
+import { FlaskIcon, MoleculeIcon, TestTubeIcon, BeakerIcon, BunsenBurnerIcon } from './components/chemistry-icons';
+import { ReactComponent as ScienceIcon } from './svgs/science.svg';
+import { ReactComponent as ProteinIcon } from './svgs/protein.svg';
 
 const App = () => {
+  useEffect(() => {
+    const icons = document.querySelectorAll('.chemistry-icon');
+    icons.forEach(icon => {
+      const randomTop = Math.random() * 100;
+      const randomLeft = Math.random() * 100;
+      icon.style.top = `${randomTop}vh`;
+      icon.style.left = `${randomLeft}vw`;
+    });
+  }, []);
+
   return (
     <Router>
-    <div className="fullscreen-wave" style={{ animationDuration: '50s' }}></div>
-    <div className="fullscreen-wave" style={{ animationDuration: '80s' }}></div>
-    <div className="fullscreen-wave" style={{ animationDuration: '40s' }}></div>
-      <Navbar bg="light" variant="light" expand="lg">
+      <div className="chemistry-background">
+        <FlaskIcon className="chemistry-icon flask" />
+        <MoleculeIcon className="chemistry-icon molecule" />
+        <TestTubeIcon className="chemistry-icon test-tube" />
+        <BeakerIcon className="chemistry-icon beaker" />
+        <BunsenBurnerIcon className="chemistry-icon burner" />
+        <ScienceIcon className="chemistry-icon burner" />
+        <ProteinIcon className="chemistry-icon burner" />
+        
+      </div>
+      <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">ACompChemLab</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -37,7 +56,6 @@ const App = () => {
       </Routes>
     </Router>
   );
-  
 };
 
 export default App;

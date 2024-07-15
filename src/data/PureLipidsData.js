@@ -77,15 +77,15 @@ const pureLipids = {
               link: "/lipids/pureLipids/psm.pdb",
               title: "PSM"
             },
-            path4: {
+            path5: {
               link: "/lipids/pureLipids/pops.pdb",
               title: "POPS"
             },
-            path5: {
+            path6: {
               link: "/lipids/pureLipids/asymm_membrane_npt_200.pdb",
               title: "Asymmetric Plasma Membrane"
             },
-            path6: {
+            path7: {
               link: "/lipids/pureLipids/rat_liver_membrane.pdb",
               title: "Rat Liver Membrane"
             }
