@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="chemistry-background">
+      <div className="chemistry-background" >
         <FlaskIcon className="chemistry-icon flask" />
         <MoleculeIcon className="chemistry-icon molecule" />
         <TestTubeIcon className="chemistry-icon test-tube" />

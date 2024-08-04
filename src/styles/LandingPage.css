@@ -1,12 +1,15 @@
+/* LandingPage.css */
+@import url('global.css');
+
 .landing-page-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: var(--text-color-dark);
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color-dark);
+  z-index: 1; /* Ensure this is less than the z-index of .chemistry-background */
+  position: relative; /* Added to establish a stacking context */
+  background-color: transparent; /* Ensure it's transparent or adjust accordingly */
 }
 
 .header, .main-content, .footer {
@@ -34,6 +37,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   border-radius: 8px;
+  background-color: transparent; /* Ensure cards do not block the background */
 }
 
 .card:hover {

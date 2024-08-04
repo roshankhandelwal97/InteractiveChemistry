@@ -1,21 +1,5 @@
-
-:root {
-  --primary-color: #007bff;
-  --accent-color-green: #28a745;
-  --accent-color-red: #dc3545;
-  --accent-color-yellow: #ffc107;
-  --background-color-light: #5a6672;
-  --background-color-dark: #343a40;
-  --text-color-dark: #333;
-  --text-color-light: #fff;
-}
-
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color-light);
-  color: var(--text-color-dark);
-}
+/* styles.css */
+@import url('global.css');
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
@@ -26,148 +10,120 @@ p {
   line-height: 1.5;
 }
 
-/* Styles for the buttons used to select molecules */
 .molecule-buttons {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-button {
-    background-color:var(--primary-color);
-    color: var(--text-color-light);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  button:hover {
-    background-color: darken(var(--primary-color), 10%);
-    transform: scale(1.05);
-  }
-
-  /* Centers the content and sets up a column layout for the selection page */
-  .selection-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.selection-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Parent container for the file selections and viewers */
 .files-selection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-/* Individual file selection and its viewer */
 .file-selection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Adjust this to fit the content */
-    position: relative; /* This makes it the anchor point for absolutely positioned children */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
 }
 
-/* The viewer itself */
 .molecule-viewer {
-    align-self: center;
-    max-width: 100%; /* Adjust this to fit the content */
-    margin-top: 10px;
-    position: relative; /* Anchor point for the canvas */
-    border: 1px solid #ccc;
-    padding: 5px;
-    width: 400px; /* Fixed width, or you could use max-width for responsiveness */
-    height: 400px; /* Fixed height for consistency */
-    margin: auto; /* Center the viewer */
+  align-self: center;
+  max-width: 100%;
+  margin-top: 10px;
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 400px;
+  height: 400px;
+  margin: auto;
 }
 
-/* Styles for the canvas inside the viewer */
 .molecule-viewer canvas {
-    width: 100%; /* This ensures the canvas fits the viewer */
-    height: 100%; /* Maintain the aspect ratio */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
-/* Custom styling for Bootstrap cards */
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add shadow for depth */
-    transition: 0.3s; /* Smooth transition for mouse hover effect */
-    border-radius: 10px; /* Rounded corners for a softer look */
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Increased shadow on hover */
-  }
-  
-  .card-img-top {
-    border-radius: 10px 10px 0 0; /* Round the top corners of the image */
-  }
-  
-  .card-title {
-    color: var(--primary-color);
-  }
-  
-  .card-text {
-    text-align: justify; /* Improve readability of the text */
-  }
-  
-  .card-body {
-    padding: 15px; /* Spacing inside the card */
-  }
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+}
 
-  /* Custom Checkbox Styles */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+  color: var(--primary-color);
+}
+
+.card-text {
+  text-align: justify;
+}
+
+.card-body {
+  padding: 15px;
+}
+
 .custom-checkbox {
-    position: relative;
-    padding-left: 25px;
-    cursor: pointer;
-    display: inline-block;
-    line-height: 20px;
-  }
-  
-  .custom-checkbox input[type="checkbox"] {
-    visibility: hidden;
-  }
-  
-  .custom-checkbox:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary-color);
-    border-radius: 3px;
-    background-color: transparent;
-  }
-  
-  .custom-checkbox input[type="checkbox"]:checked + label:before {
-    background-color: var(--primary-color);
-  }
-  
-  .custom-checkbox label {
-    cursor: pointer;
-  }
-  
-  /* Flexbox for horizontal images */
-  .files-selection {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Adjust the gap between images */
-  }
-  
-  .file-viewer-container {
-    flex: 1 1 auto;
-  }
-  
-  /* Global styles.css or similar */
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 20px;
+}
 
-/* Fullscreen wave background */
+.custom-checkbox input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.custom-checkbox:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+  background-color: var(--primary-color);
+}
+
+.custom-checkbox label {
+  cursor: pointer;
+}
+
+.files-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.file-viewer-container {
+  flex: 1 1 auto;
+}
+
 .fullscreen-wave {
   position: absolute;
   top: 0;
@@ -176,17 +132,14 @@ button {
   height: 100vh;
   opacity: 0.6;
   background: linear-gradient(744deg, #00d8eb, #38cad2 60%, #3db6b6);
-  z-index: -1; /* Ensure it stays in the background */
+  z-index: -1;
   animation: wave 10s infinite linear;
-  border-radius: 0; /* Optional, depending on desired effect */
+  border-radius: 0;
   animation: wave 50s infinite linear;
-  /* background-image: url('../background.svg'); */
   background-size: cover;
   background-position: center;
-  /* animation: slideWave 20s infinite linear; */
 }
 
-/* Animation for the wave */
 @keyframes wave {
   0% {
     transform: rotate(0deg);
@@ -195,6 +148,7 @@ button {
     transform: rotate(360deg);
   }
 }
+
 @keyframes slideWave {
   from {
     left: -50%;
@@ -202,10 +156,8 @@ button {
   to {
     left: 100%;
   }
-
 }
 
-/* SVGs */
 .chemistry-background {
   position: absolute;
   top: 0;
@@ -226,7 +178,7 @@ button {
 }
 
 .flask {
-  animation-duration: 12s, 25s, 40s;
+  animation-duration: 30s, 25s, 40s;
 }
 
 .molecule {

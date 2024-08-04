@@ -1,10 +1,29 @@
 /*START OF MOLECULE PAGE */
 
+/* Root color and font settings */
+:root {
+  --primary-color: var(--button-background-color); /* From global.css */
+  --text-color: var(--text-color-light); /* From global.css */
+  --background-color: var(--background-color-light); /* From global.css */
+  --font-family: var(--font-family); /* From global.css */
+  --text-color-dark: var(--text-color-dark);
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
 /* Molecule image adjustments */
 .img-fluid {
-  max-width: 100%; /* Ensure full width but maintain aspect ratio */
-  height: auto; /* Maintain aspect ratio */
-  width: auto; /* Adjust width automatically to maintain aspect ratio */
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.5s ease-in-out;
 }
 
 .img-fluid.centered-image {
@@ -15,8 +34,18 @@
 }
 
 .molecule-info h2 {
-  transition: none; /* No transition for the title */
-  opacity: 1; /* Always fully visible */
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-top: 1rem;
+}
+
+.molecule-info p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .molecule-info p, .btn-primary {
@@ -63,14 +92,15 @@ p {
 
 /* Enhance button interaction */
 .btn-primary {
-  background-color: #0056b3; /* A deep blue that matches the theme */
-  border: none; /* No border for a cleaner look */
-  padding: 10px 20px; /* Larger button for easier interaction */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  background-color: var(--button-background-color);
+  border: none;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  color: var(--text-color);
 }
 
 .btn-primary:hover {
-  background-color: #003d82; /* Darken the button on hover for effect */
+  background-color: var(--button-hover-background-color);
 }
 
 .img-fluid {
@@ -91,12 +121,14 @@ p {
 
 /* Fullscreen Modal overrides */
 .modal-dialog {
-  width: 100vw;
+  width: auto;
   height: 100vh;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 95%; /* Prevents the modal from being too wide */
+
 }
 
 .custom-animation-modal-dialog {
@@ -121,10 +153,11 @@ p {
 }
 
 /* Make the modal content flex container to center the animation */
-.modal-content {
+div.modal-content {
   display: flex;
   /* align-items: center; */
   justify-content: center;
+  background-color: var(--background-color-dark);
 }
 
 
@@ -183,6 +216,8 @@ p {
 
 .modal-title {
   flex-grow: 1; /* Allow title to fill space */
+  color: var(--text-color-light);
+
 }
 
 .close {
@@ -190,6 +225,8 @@ p {
   right: 1rem; /* Positioned to the right */
   top: 1rem; /* Positioned at the top */
   z-index: 1051; /* Above all modal content */
+  color: var(--text-color);
+
 }
 
 .toggle-animation-button {
@@ -257,11 +294,12 @@ p {
 
 .viewer-container, .animation-container {
   margin-bottom: 1rem; /* Space between viewers and other elements */
+  background-color: var(--background-color-dark);
 }
 
 /* Enhance visibility and interaction */
 .viewer-container > div, .animation-viewer-container {
-  background-color: #f8f9fa; /* Light background for contrast */
+  background-color: var(--background-color-dark); /* Light background for contrast */
   border-radius: 0.25rem; /* Soften the edges */
 }
 
@@ -336,6 +374,7 @@ p {
 /* Ensure the radio buttons are visible */
 .viewer-style-form .form-check {
   margin-right: 1rem; /* Space between radio buttons */
+  color: var(--text-color-dark);
 }
 
 /* Add custom styles for your form elements if needed */

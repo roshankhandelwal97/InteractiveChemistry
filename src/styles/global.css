@@ -1,0 +1,41 @@
+/* global.css */
+
+:root {
+    --primary-color: #007bff;
+    --background-color-light: #5a6672;
+    --background-color-dark: #343a40; 
+    /* --background-color-dark: #66857b;  */
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --button-background-color: #000000;
+    --button-hover-background-color: #003d82;
+    --font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Apply common styles */
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color-light);
+    color: var(--text-color-dark);
+    margin: 0;
+  }
+  
+  /* Common button styles */
+  button {
+    background-color: var(--button-background-color);
+    color: var(--text-color-light);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover-background-color);
+    transform: scale(1.05);
+  }
+
+
+  

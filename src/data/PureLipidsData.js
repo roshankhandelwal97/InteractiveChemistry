@@ -55,7 +55,7 @@ const pureLipids = {
     {
       name: "Mixtures",
       description: "Some Interesting Facts about DPPC",
-      image: "/images/pureLipids/dppc.png",
+      image: "/images/pureLipids/psm.png",
       files: [
         {
           displayName: "Mixtures",
