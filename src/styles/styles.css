@@ -235,3 +235,33 @@ p {
     transform: translate(0, 0);
   }
 }
+
+html {
+    overflow-y: scroll; /* Ensures vertical scrollbar is always shown */
+}
+
+/* Styles for the scrollbar on the whole page */
+::-webkit-scrollbar {
+    width: 8px; /* Increased width for visibility */
+    background-color: #f9f9f9; /* Adding a background color to the track for contrast */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Light grey track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Darker grey thumb for contrast */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Even darker on hover */
+}
+
+
+/* Firefox scrollbar styles */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #888 transparent; /* thumb and track color */
+}

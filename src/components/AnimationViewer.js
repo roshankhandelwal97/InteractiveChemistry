@@ -10,7 +10,7 @@ const AnimationViewer = ({ animationPath, label }) => {
   useEffect(() => {
     if (!animationPath) return;
 
-    const viewer = $3Dmol.createViewer(viewerRef.current, { backgroundColor: 'white' });
+    const viewer = $3Dmol.createViewer(viewerRef.current, { backgroundColor: '#343a40' });
     const options = { keepH: true, assignbonds: true };
 
     fetch(animationPath)
@@ -43,7 +43,7 @@ const AnimationViewer = ({ animationPath, label }) => {
   }, [animationPath]);
 
   return (
-    <div ref={containerRef} style={{ width: '500px', height: '500px', position: 'relative' }}>
+    <div ref={containerRef} style={{ width: '800px', height: '753px', position: 'relative' }}>
             <div ref={viewerRef} style={{ width: '100%', height: '100%' }}></div>
             {label && (
                 <div style={{

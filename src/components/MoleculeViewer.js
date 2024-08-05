@@ -58,15 +58,15 @@ const MoleculeViewer = ({ filePath, style, label }) => {
     }, [filePath, style]);
 
     return (
-        <div ref={containerRef} style={{ width: '600px', height: '600px', position: 'relative' }}>
+        <div ref={containerRef} style={{ width: '800px', height: '600px', position: 'relative' }}>
             <div ref={viewerRef} style={{ width: '100%', height: '100%' }}></div>
             {label && (
                 <div style={{
                     position: 'absolute',
                     bottom: '8px',
-                    right: '8px',
+                    right: '100px',
                     color: 'white',
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black background
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)', // Semi-transparent black background
                     padding: '5px 10px',
                     borderRadius: '5px',
                     fontSize: '16px'

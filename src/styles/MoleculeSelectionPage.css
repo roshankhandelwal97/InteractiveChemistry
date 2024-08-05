@@ -138,18 +138,19 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 95%; /* Prevents the modal from being too wide */
+  max-width: none; /* Prevents the modal from being too wide */
 
 }
 
 .custom-animation-modal-dialog {
-  max-width: 90%; /* This sets the max width of the modal as a percent of the viewport width */
+  max-width: 150%; /* This sets the max width of the modal as a percent of the viewport width */
+  height: 90vh;
 }
 
 .animation-viewer-container {
   /* Adjust dimensions as needed to fit the animation */
-  width: 100%;
-  max-width: 800px; /* Example fixed max width or use percentage */
+  /* width: 100%; */
+  /* max-width: 1500px; Example fixed max width or use percentage */
   height: auto; /* Adjust height based on the aspect ratio of the animation */
   margin: auto; /* This will center the div if it has a width less than 100% */
 }
@@ -169,6 +170,11 @@ div.modal-content {
   /* align-items: center; */
   justify-content: center;
   background-color: var(--background-color-dark);
+  width: 200%
+}
+.custom-animation-modal-dialog .modal-content {
+  background-color: rgba(0, 0, 0, 0.1); /* Darker semi-transparent black */
+  color: white; /* Adjust text color for better readability */
 }
 
 
@@ -300,7 +306,11 @@ div.modal-content {
 
 
 .viewer-container {
-  min-height: 300px; /* Ensures the viewer has enough space */
+  width: 100%; /* Ensure it uses the full width available */
+  max-width: 600px; /* or your preferred max width */
+  height: 600px; /* or adjust based on your preference */
+  padding: 0;
+  margin: 0 auto; /* This centers the viewer horizontally */
 }
 
 .viewer-container, .animation-container {
@@ -324,11 +334,13 @@ div.modal-content {
 
 .animation-viewer-container {
   width: 100%; /* Use the full width of the modal */
-  height: 85vh; /* Adjust the height to be a bit less than the modal to fit controls, etc. */
+  height: 100%;; /* Adjust the height to be a bit less than the modal to fit controls, etc. */
   display: flex; /* Ensure it uses flex layout to center content */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   background-color: rgba(0, 0, 0, 0.1); /* Maintain a light background for visibility */
+  padding: 0;
+
 }
 
 /* Description text styling */
