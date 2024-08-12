@@ -11,6 +11,7 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
   const [showAnimationModal, setShowAnimationModal] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [moleculeStyle, setMoleculeStyle] = useState('stick');
+  const [showOptions, setShowOptions] = useState(false);
 
   const handleExploreClick = (file) => {
     setSelectedMoleculeFile(file);
@@ -32,30 +33,7 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
   const hasAnimations = () => {
     return selectedMoleculeFile && selectedMoleculeFile.animations && selectedMoleculeFile.animations.link;
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const position = window.pageYOffset;
-      const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 200;
   
-      setScrollPosition(position);
-  
-      if (nearBottom) {
-        // Apply the animate class to all molecule-info elements
-        document.querySelectorAll('.molecule-info').forEach(el => {
-          el.classList.add('animate');
-        });
-      }
-    };
-  
-    window.addEventListener('scroll', handleScroll);
-  
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  
-
   return (
     <Container className="molecule-selection-page">
       {pureLipidsData.molecules.map((molecule, index) => (
@@ -91,27 +69,50 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
               <Row className="justify-content-md-center">
                 {selectedMoleculeFile.paths && Object.entries(selectedMoleculeFile.paths).map(([key, path]) => (
                   <Col md={6} key={key} className="mb-3">
-                    <MoleculeViewer filePath={path.link} label={path.title} style={moleculeStyle}/>
+                    <MoleculeViewer 
+                      filePath={path.link}
+                      label={path.title}
+                      style={moleculeStyle}
+                      singleStructure={path.singleStructure}
+                    />
                   </Col>
                 ))}
               </Row>
               <Row className="justify-content-md-center">
-                <Form className="viewer-style-form">
-                  <Form.Group>
-                    {['line', 'sphere', 'stick'].map((type) => (
-                      <Form.Check
-                        inline
-                        label={type.charAt(0).toUpperCase() + type.slice(1)}
-                        type="radio"
-                        id={`inline-${type}-1`}
-                        name="moleculeStyle"
-                        value={type}
-                        checked={moleculeStyle === type}
-                        onChange={(e) => setMoleculeStyle(e.currentTarget.value)}
-                      />
-                    ))}
-                  </Form.Group>
-                </Form>
+                <div className="select">
+                  <div
+                    className="selected"
+                    onClick={() => setShowOptions(!showOptions)} // Toggle dropdown visibility
+                  >
+                    {moleculeStyle.charAt(0).toUpperCase() + moleculeStyle.slice(1)} {/* Display selected style */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="1em"
+                      viewBox="0 0 512 512"
+                      className="arrow"
+                    >
+                      <path
+                        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                      ></path>
+                    </svg>
+                  </div>
+                  {showOptions && (
+                    <div className="options">
+                      {['line', 'sphere', 'stick'].map(option => (
+                        <div
+                          key={option}
+                          className="option"
+                          onClick={() => {
+                            setMoleculeStyle(option);
+                            setShowOptions(false); // Hide options after selection
+                          }}
+                        >
+                          {option.charAt(0).toUpperCase() + option.slice(1)}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </Row>
               <Row>
                 <Col>

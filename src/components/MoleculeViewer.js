@@ -3,7 +3,7 @@ import * as $3Dmol from '3dmol';
 import { elementColors } from '../data/elementColors'; // Import the color mapping
 
 
-const MoleculeViewer = ({ filePath, style, label }) => {
+const MoleculeViewer = ({ filePath, style, label, singleStructure }) => {
     const viewerRef = useRef();
     const containerRef = useRef();
 
@@ -40,11 +40,16 @@ const MoleculeViewer = ({ filePath, style, label }) => {
                         break;
                     case 'stick':
                     default:
-                        Object.keys(elementColors).forEach(element => {
-                            viewer.setStyle({elem: element}, {stick: {color: elementColors[element], radius: 0.2}});
-                        });
-                        //viewer.setStyle({}, {stick: {radius: 0.2, colorscheme: "chain"}});
-                        viewer.setStyle({ elem: 'P' }, { sphere: { radius: 1.5, color: 'orange' } });
+                        if (singleStructure === 'Y') {
+                            Object.keys(elementColors).forEach(element => {
+                                viewer.setStyle({elem: element}, {stick: {color: elementColors[element], radius: 0.2}});
+                            });
+                        } else {
+                            Object.keys(elementColors).forEach(element => {
+                                viewer.setStyle({elem: element}, {stick: {color: elementColors[element], radius: 0.2}});
+                            });
+                            viewer.setStyle({ elem: 'P' }, { sphere: { radius: 3, color: 'orange' } });
+                        }
                 }
 
                 viewer.zoomTo();
@@ -55,7 +60,7 @@ const MoleculeViewer = ({ filePath, style, label }) => {
                 viewer.destroy();
             }
         };
-    }, [filePath, style]);
+    }, [filePath, style, singleStructure]);
 
     return (
         <div ref={containerRef} style={{ width: '800px', height: '600px', position: 'relative' }}>

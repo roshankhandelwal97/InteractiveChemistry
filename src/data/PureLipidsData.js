@@ -13,11 +13,13 @@ const pureLipids = {
           paths: {
             path1: {
               link: "/lipids/pureLipids/popc.pdb",
-              title: "Single POPC"
+              title: "Single POPC",
+              singleStructure: "Y"
             },
             path2: {
               link: "/lipids/pureLipids/200_POPC_initial.pdb",
-              title: "200 POPC"
+              title: "200 POPC",
+              singleStructure: "N"
             }
           },
           animations: {
@@ -38,11 +40,13 @@ const pureLipids = {
           paths: {
             path1: {
               link: "/lipids/pureLipids/single_DPPC_initial.pdb",
-              title: "Single DPPC"
+              title: "Single DPPC", 
+              singleStructure: "Y"
             },
             path2: {
               link: "/lipids/pureLipids/200_DPPC_initial.pdb",
-              title: "200 DPPC"
+              title: "200 DPPC",
+              singleStructure: "N"
             }
           },
           animations: {
@@ -63,31 +67,38 @@ const pureLipids = {
           paths: {
             path1: {
               link: "/lipids/pureLipids/POPC.pdb",
-              title: "POPC"
+              title: "POPC",
+              singleStructure: "Y"
             },
             path2: {
               link: "/lipids/pureLipids/chol.pdb",
-              title: "CHOL"
+              title: "CHOL",
+              singleStructure: "Y"
             },
             path3: {
               link: "/lipids/pureLipids/pope.pdb",
-              title: "POPE"
+              title: "POPE",
+              singleStructure: "Y"
             },
             path4: {
               link: "/lipids/pureLipids/psm.pdb",
-              title: "PSM"
+              title: "PSM",
+              singleStructure: "Y"
             },
             path5: {
               link: "/lipids/pureLipids/pops.pdb",
-              title: "POPS"
+              title: "POPS",
+              singleStructure: "Y"
             },
             path6: {
               link: "/lipids/pureLipids/asymm_membrane_npt_200.pdb",
-              title: "Asymmetric Plasma Membrane"
+              title: "Asymmetric Plasma Membrane",
+              singleStructure: "N"
             },
             path7: {
               link: "/lipids/pureLipids/rat_liver_membrane.pdb",
-              title: "Rat Liver Membrane"
+              title: "Rat Liver Membrane",
+              singleStructure: "N"
             }
           },
           animations: {

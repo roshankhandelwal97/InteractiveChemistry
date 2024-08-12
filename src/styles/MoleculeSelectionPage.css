@@ -54,20 +54,9 @@ body {
 .molecule-info p {
   font-size: 1.2rem;
   color: var(--text-color);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.molecule-info p, .btn-primary {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.animate .molecule-info p, .animate .molecule-info .btn-primary {
   opacity: 1;
-  transform: translateY(0);
+  /* transform: translateY(50px); */
+  /* transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; */
 }
 
 /* Molecule name text size increase */
@@ -122,9 +111,6 @@ p {
   transform: scale(1.1); /* Slight zoom effect */
 }
 
-.molecule-selection-page {
-  margin-bottom: 380px; /* Adjust as necessary */
-}
 
 /*END OF MOLECULE PAGE */
 
@@ -416,4 +402,50 @@ div.modal-content {
 .form-group {
   border: 1px solid red; /* Just for debugging */
   background-color: lightyellow; /* Just for debugging */
+}
+
+.select {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  color: white;
+}
+
+.selected {
+  background-color: rgba(0,0,0,0.1);
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.arrow {
+  transform: rotate(0deg);
+  transition: transform 300ms ease;
+}
+
+.options {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.1);
+  position: absolute;
+  width: 40%;
+  z-index: 2;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.select:hover .options,
+.select:focus-within .options {
+  display: flex; /* This makes the options visible on hover or focus */
+}
+
+.option {
+  padding: 10px;
+  transition: background-color 300ms;
+}
+
+.option:hover {
+  background-color: #323741;
 }
