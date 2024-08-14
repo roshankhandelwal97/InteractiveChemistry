@@ -5,7 +5,8 @@ const pureLipids = {
     {
       name: "POPC",
       description: "Some Interesting Facts about POPC",
-      image: "/images/pureLipids/popc.png",
+      image: "/lipids/pureLipids/popc.pdb",
+      singleStructure: "Y",
       files: [
         {
           displayName: "POPC",
@@ -32,7 +33,8 @@ const pureLipids = {
     {
       name: "DPPC",
       description: "Some Interesting Facts about DPPC",
-      image: "/images/pureLipids/dppc.png",
+      image: "/lipids/pureLipids/single_DPPC_initial.pdb",
+      singleStructure: "Y",
       files: [
         {
           displayName: "DPPC",
@@ -59,7 +61,8 @@ const pureLipids = {
     {
       name: "Mixtures",
       description: "Some Interesting Facts about DPPC",
-      image: "/images/pureLipids/psm.png",
+      image: "/lipids/pureLipids/pope.pdb",
+      singleStructure: "Y",
       files: [
         {
           displayName: "Mixtures",

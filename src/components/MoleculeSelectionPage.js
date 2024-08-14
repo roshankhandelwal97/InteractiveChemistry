@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Modal, Form, Button} from 'react-bootstrap'; 
 import MoleculeViewer from './MoleculeViewer';
 import AnimationViewer from './AnimationViewer';
+import ImageRender from './ImageRender';
 import Draggable from 'react-draggable'; // Import Draggable
 import '../styles/MoleculeSelectionPage.css';
 
@@ -36,10 +37,13 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
   
   return (
     <Container className="molecule-selection-page">
-      {pureLipidsData.molecules.map((molecule, index) => (
+      {pureLipidsData.molecules.map((molecule, index, array) => (
         <Row key={index} className={`mb-4 align-items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} ${scrollPosition > (index * 300) ? 'animate' : ''}`}>
           <Col md={4} className="molecule-image">
-            <img src={molecule.image} alt={molecule.name} className="img-fluid" />
+          <ImageRender
+              filePath={molecule.image}
+              singleStructure={molecule.singleStructure}
+            />
           </Col>
           <Col md={6} className="molecule-info">
             <h2>{molecule.name}</h2>

@@ -5,7 +5,8 @@ const MixtureLipidsData = {
     {
       name: "POPC with Polystyrene",
       description: "Some Interesting Facts about POPC",
-      image: "/images/mixtureLipids/popc_poly.png",
+      image: "/lipids/mixtureLipids/popc_poly_nowat_ion.pdb",
+      singleStructure: "N",
       files: [
         {
           displayName: "POPC with Polystyrene",
@@ -13,15 +14,18 @@ const MixtureLipidsData = {
           paths: {
             path1: {
               link: "/lipids/pureLipids/popc.pdb",
-              title: "Single POPC"
+              title: "Single POPC",
+              singleStructure: "Y",
             },
             path2: {
               link: "/lipids/mixtureLipids/polystyrene.pdb",
-              title: "Polystyrene"
+              title: "Polystyrene",
+              singleStructure: "Y"
             },
             path3: {
               link: "/lipids/mixtureLipids/popc_poly_nowat_ion.pdb",
-              title: "200 POPC with Polystyrene"
+              title: "200 POPC with Polystyrene",
+              singleStructure: "N"
             }
           },
           animations: {
@@ -34,7 +38,8 @@ const MixtureLipidsData = {
     {
       name: "DPPC with Polystyrene",
       description: "Some Interesting Facts about DPPC",
-      image: "/images/mixtureLipids/dppc_poly.png",
+      image: "/lipids/mixtureLipids/dppc_poly_nowat_ion.pdb",
+      singleStructure: "N",
       files: [
         {
           displayName: "DPPC with Polystyrene",
@@ -42,15 +47,18 @@ const MixtureLipidsData = {
           paths: {
             path1: {
               link: "/lipids/pureLipids/single_DPPC_initial.pdb",
-              title: "Single DPPC"
+              title: "Single DPPC",
+              singleStructure: "Y",
             },
             path2: {
               link: "/lipids/mixtureLipids/polystyrene.pdb",
-              title: "Polystyrene"
+              title: "Polystyrene",
+              singleStructure: "Y"
             },
             path3: {
               link: "/lipids/mixtureLipids/dppc_poly_nowat_ion.pdb",
-              title: "200 DPPC with Polystyrene"
+              title: "200 DPPC with Polystyrene",
+              singleStructure: "N"
             }
           },
           animations: {
@@ -63,7 +71,8 @@ const MixtureLipidsData = {
     {
       name: "Asymmetric Plasma Membrane with Polystyrene",
       description: "Some Interesting Facts about DPPC",
-      image: "/images/mixtureLipids/asym_poly.png",
+      image: "/lipids/mixtureLipids/asymm_poly_nowat_ion.pdb",
+      singleStructure: "N",
       files: [
         {
           displayName: "Asymmetric Plasma Membrane with Polystyrene",
@@ -71,15 +80,18 @@ const MixtureLipidsData = {
           paths: {
             path1: {
               link: "/lipids/pureLipids/POPC.pdb",
-              title: "Asymmetric Plasma Membrane"
+              title: "Asymmetric Plasma Membrane",
+              singleStructure: "Y"
             },
             path2: {
               link: "/lipids/mixtureLipids/polystyrene.pdb",
-              title: "Polystyrene"
+              title: "Polystyrene",
+              singleStructure: "Y"
             },
             path3: {
               link: "/lipids/mixtureLipids/asymm_poly_nowat_ion.pdb",
-              title: "Asymmetric Plasma Membrane with Polystyrene"
+              title: "Asymmetric Plasma Membrane with Polystyrene",
+              singleStructure: "N"
             }
           },
           animations: {
@@ -92,7 +104,8 @@ const MixtureLipidsData = {
     {
       name: "Rat Liver Membrane with Polystyrene",
       description: "Some Interesting Facts about DPPC",
-      image: "/images/mixtureLipids/rat_liver_poly.png",
+      image: "lipids/mixtureLipids/rat_liver_poly_nowat_ion.pdb",
+      singleStructure: "N",
       files: [
         {
           displayName: "Rat Liver Membrane with Polystyrene",
@@ -100,15 +113,19 @@ const MixtureLipidsData = {
           paths: {
             path1: {
               link: "/lipids/pureLipids/POPC.pdb",
-              title: "Rat Liver Membrane"
+              title: "Rat Liver Membrane",
+              singleStructure: "Y"
             },
             path2: {
               link: "/lipids/mixtureLipids/polystyrene.pdb",
-              title: "Polystyrene"
+              title: "Polystyrene",
+              singleStructure: "Y"
+
             },
             path3: {
               link: "/lipids/mixtureLipids/rat_liver_poly_nowat_ion.pdb",
-              title: "Rat Liver Membrane with Polystyrene"
+              title: "Rat Liver Membrane with Polystyrene",
+              singleStructure: "N"
             }
           },
           animations: {

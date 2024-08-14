@@ -51,9 +51,9 @@ const MoleculeViewer = ({ filePath, style, label, singleStructure }) => {
                             viewer.setStyle({ elem: 'P' }, { sphere: { radius: 3, color: 'orange' } });
                         }
                 }
-
                 viewer.zoomTo();
                 viewer.render();
+                viewer.rotate(270, {x: 1, y: 0, z: 0} );
             });
         return () => {
             if (viewer && typeof viewer.destroy === 'function') {

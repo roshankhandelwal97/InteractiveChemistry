@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import '../styles/HomePage.css';
-
+import ImageRender from './ImageRender';
 const HomePage = () => {
   let navigate = useNavigate();
 
@@ -24,7 +24,10 @@ const HomePage = () => {
               <Col md={6} lg={4} onClick={() => navigateTo('/pure-lipid-selection')}>
                 <div className="custom-card">
                   <div className="custom-card-img">
-                    <Card.Img variant="top" src="/images/pureLipids/popc.png" />
+                    <ImageRender
+                        filePath="/lipids/pureLipids/popc.pdb"
+                        singleStructure= "Y"
+                    />
                     <div className="custom-card-title">Membrane</div>
                   </div>
                   <div className="custom-card-overlay">
@@ -37,7 +40,10 @@ const HomePage = () => {
               <Col md={6} lg={4} onClick={() => navigateTo('/mixture-lipid-selection')}>
                 <div className="custom-card">
                   <div className="custom-card-img">
-                    <Card.Img variant="top" src="/images/mixtureLipids/popc_poly.png" />
+                    <ImageRender
+                        filePath="/lipids/mixtureLipids/popc_poly_nowat_ion.pdb"
+                        singleStructure= "N"
+                    />
                     <div className="custom-card-title">Membrane with Polystyrene</div>
                   </div>
                   <div className="custom-card-overlay">
