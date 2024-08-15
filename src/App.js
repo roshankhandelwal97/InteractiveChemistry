@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="chemistry-background" >
+      {/* <div className="chemistry-background" >
         <FlaskIcon className="chemistry-icon flask" />
         <MoleculeIcon className="chemistry-icon molecule" />
         <TestTubeIcon className="chemistry-icon test-tube" />
@@ -33,7 +33,7 @@ const App = () => {
         <ScienceIcon className="chemistry-icon burner" />
         <ProteinIcon className="chemistry-icon burner" />
         
-      </div>
+      </div> */}
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">ACompChemLab</Navbar.Brand>
@@ -42,7 +42,7 @@ const App = () => {
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/home">Home</Nav.Link>
               <Nav.Link as={Link} to="/pure-lipid-selection">Membrane</Nav.Link>
-              <Nav.Link as={Link} to="/mixture-lipid-selection">Polystyrene</Nav.Link>
+              <Nav.Link as={Link} to="/mixture-lipid-selection">Membrane with Polystyrene</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

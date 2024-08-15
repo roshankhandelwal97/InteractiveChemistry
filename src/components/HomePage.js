@@ -25,7 +25,7 @@ const HomePage = () => {
                 <div className="custom-card">
                   <div className="custom-card-img">
                     <ImageRender
-                        filePath="/lipids/pureLipids/popc.pdb"
+                        filePath="/lipids/pureLipids/200_POPC_initial.pdb"
                         singleStructure= "Y"
                     />
                     <div className="custom-card-title">Membrane</div>

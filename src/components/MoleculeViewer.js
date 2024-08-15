@@ -15,7 +15,7 @@ const MoleculeViewer = ({ filePath, style, label, singleStructure }) => {
             height: 400,
             antialias: true,
             quality: 'high',
-            backgroundColor: ' #343a40'
+            backgroundColor: ' #2a4163'
         });
 
         fetch(filePath)
@@ -69,7 +69,7 @@ const MoleculeViewer = ({ filePath, style, label, singleStructure }) => {
                 <div style={{
                     position: 'absolute',
                     bottom: '8px',
-                    right: '100px',
+                    right: '350px',
                     color: 'white',
                     backgroundColor: 'rgba(0, 0, 0, 0.1)', // Semi-transparent black background
                     padding: '5px 10px',

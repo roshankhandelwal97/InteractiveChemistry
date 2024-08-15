@@ -61,7 +61,7 @@ const pureLipids = {
     {
       name: "Mixtures",
       description: "Some Interesting Facts about DPPC",
-      image: "/lipids/pureLipids/pope.pdb",
+      image: "/lipids/pureLipids/asymm_membrane_npt_200.pdb",
       singleStructure: "Y",
       files: [
         {

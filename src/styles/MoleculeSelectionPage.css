@@ -214,7 +214,9 @@ div.modal-content {
 
 /* Adjust close button position */
 .modal-header {
-  justify-content: space-between; /* Space between elements */
+  display: flex;
+  justify-content: center; /* Center the title */
+  position: relative;
 }
 
 .modal-title {
@@ -418,6 +420,10 @@ div.modal-content {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  min-width: 100px; /* Minimum width */
+  max-width: 100px; /* Maximum width */
+  right: 100px; /* Adjust based on padding and positioning */
+  top: 10px; /* Adjust based on header height */
 }
 
 .arrow {
@@ -428,13 +434,15 @@ div.modal-content {
 .options {
   display: none;
   flex-direction: column;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.6);
   position: absolute;
-  width: 40%;
+  min-width: 100px; /* Minimum width */
+  max-width: 100px; /* Maximum width */
   z-index: 2;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 
 .select:hover .options,
 .select:focus-within .options {
@@ -449,3 +457,5 @@ div.modal-content {
 .option:hover {
   background-color: #323741;
 }
+
+

@@ -79,9 +79,9 @@ const MixtureLipidsData = {
           description: "Lorem I",
           paths: {
             path1: {
-              link: "/lipids/pureLipids/POPC.pdb",
+              link: "/lipids/pureLipids/asymm_membrane_npt_200.pdb",
               title: "Asymmetric Plasma Membrane",
-              singleStructure: "Y"
+              singleStructure: "N"
             },
             path2: {
               link: "/lipids/mixtureLipids/polystyrene.pdb",
@@ -112,9 +112,9 @@ const MixtureLipidsData = {
           description: "Lorem I",
           paths: {
             path1: {
-              link: "/lipids/pureLipids/POPC.pdb",
+              link: "/lipids/pureLipids/rat_liver_membrane.pdb",
               title: "Rat Liver Membrane",
-              singleStructure: "Y"
+              singleStructure: "N"
             },
             path2: {
               link: "/lipids/mixtureLipids/polystyrene.pdb",
