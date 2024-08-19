@@ -40,7 +40,7 @@ const App = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/home">Home</Nav.Link>
+              <Nav.Link as={Link} to="/home">Membrane Nanoplastic Interactions</Nav.Link>
               <Nav.Link as={Link} to="/pure-lipid-selection">Membrane</Nav.Link>
               <Nav.Link as={Link} to="/mixture-lipid-selection">Membrane with Polystyrene</Nav.Link>
             </Nav>

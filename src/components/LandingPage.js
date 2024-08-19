@@ -12,7 +12,7 @@ const LandingPage = () => {
   return (
     <div className="landing-page-container">
       <header className="header">
-        <h1>Welcome to ACompChemLab Explorer!</h1>
+        <h1>Welcome to <span className="acompchemlab">ACompChemLab</span> Explorer!</h1>
         <p>Your journey into the molecular world begins here.</p>
       </header>
       <main className="main-content">
@@ -22,7 +22,7 @@ const LandingPage = () => {
             <p>Click to explore the interactive gallery of molecules.</p>
           </div>
           <div className="card disabled">
-            <h2>Baterial Nanowire</h2>
+            <h2>Bacterial Nanowire</h2>
             <p>Coming Soon! This feature is under development and will be available soon.</p>
           </div>
         </div>

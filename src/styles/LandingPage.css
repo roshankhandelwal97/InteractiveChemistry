@@ -18,9 +18,14 @@
 }
 
 .header h1 {
-  font-size: 2.5rem;
-  color: var(--text-color-light);
+  font-size: 4rem;
+  color: #d2d0d0f0;
 }
+
+.navbar-brand {
+  color: #d6fb00;
+}
+
 
 .cards-container {
   display: flex;
@@ -35,7 +40,7 @@
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
   border-radius: 8px;
   background-color: transparent; /* Ensure cards do not block the background */
 }
@@ -59,10 +64,10 @@
 
 .card p {
   font-size: 1rem;
+  color: #777;
 }
 
 .footer {
-  margin-top: auto;
   font-size: 1rem;
   color: #777;
 }

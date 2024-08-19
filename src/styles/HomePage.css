@@ -21,23 +21,23 @@
 }
 
 .custom-card-title {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
+  position: center;
+  bottom: 3rem;
+  left: 10%;
   color: var(--text-color-light);
-  z-index: 2;
-  font-size: 1.5rem;
+  z-index: 10;
+  font-size: 1.6rem;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .custom-card-overlay {
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 11%;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,9 +67,9 @@
 }
 
 .custom-card-overlay .card-text {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: var(--text-color-light);
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   margin: 0;
 }
 
@@ -85,14 +85,26 @@
 
 .headline {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
+  color: #d2d0d0f0; /* Default color for the whole headline */
+}
+
+.acompchemlab {
+  color: #d6fb00; /* Different color for "ACompChemLab" */
 }
 
 .subheadline {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+  color: #000000f0;
 }
-
+.subheadline-intro {
+  text-align: justify; /* Aligns text to both left and right margins */
+  text-justify: inter-word;
+  line-height: 1.6;
+  /* padding: 0 5px; */
+  
+}
 .navigation-card {
   cursor: pointer;
   transition: transform 0.2s;
@@ -104,10 +116,14 @@
 
 @media (min-width: 768px) {
   .headline {
-    font-size: 4rem;
+    font-size: 3.2rem;
   }
 
   .subheadline {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
+  .subheadline-intro {
+    font-size: 0.9rem;
+  }
+  
 }

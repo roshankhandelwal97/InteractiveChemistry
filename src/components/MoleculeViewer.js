@@ -71,10 +71,10 @@ const MoleculeViewer = ({ filePath, style, label, singleStructure }) => {
                     bottom: '8px',
                     right: '350px',
                     color: 'white',
-                    backgroundColor: 'rgba(0, 0, 0, 0.1)', // Semi-transparent black background
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black background
                     padding: '5px 10px',
                     borderRadius: '5px',
-                    fontSize: '16px'
+                    fontSize: '20px'
                 }}>
                     {label}
                 </div>

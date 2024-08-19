@@ -47,7 +47,7 @@ body {
 .molecule-info h2 {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--text-color);
+  color: #d6fb03;
   margin-top: 1rem;
 }
 
@@ -91,15 +91,20 @@ p {
 }
 
 /* Enhance button interaction */
-.btn-primary {
-  background-color: var(--button-background-color);
-  border: none;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-  color: var(--text-color);
+button.explore-button {
+  background-color: #d2d0d0; /* Directly setting light gray as the default background */
+  color: #000; /* Directly setting text color to black */
+  border: none; /* No borders for a cleaner look */
+  padding: 10px 20px; /* Appropriate padding for comfort and appearance */
+  transition: background-color 0.3s ease; /* Smooth transition for background color changes */
 }
 
-.btn-primary:hover {
+button.explore-button:hover {
+  background-color: #d6fb00; /* Bright yellow background on hover for visibility */
+  color: #000; /* Keeping text color black on hover */
+}
+
+.explore-button :hover {
   background-color: var(--button-hover-background-color);
 }
 
@@ -109,6 +114,28 @@ p {
 
 .animate .img-fluid {
   transform: scale(1.1); /* Slight zoom effect */
+}
+
+.card-style {
+  background-color: rgba(0, 0, 0, 0.09); /* Slightly darker background for the card */
+  border-radius: 8px; /* Rounded corners for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for 3D effect */
+  padding: 20px; /* Padding around the content */
+  margin-bottom: 20px; /* Space between cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card-style:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for more depth */
+}
+
+
+.custom-modal-title {
+  color: white; /* White text color */
+  font-size: 3rem; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center alignment */
 }
 
 
@@ -159,7 +186,7 @@ div.modal-content {
   width: 200%
 }
 .custom-animation-modal-dialog .modal-content {
-  background-color: rgba(0, 0, 0, 0.1); /* Darker semi-transparent black */
+  background-color: rgba(42, 65, 99, 1); /* Darker semi-transparent black */
   color: white; /* Adjust text color for better readability */
 }
 
@@ -238,9 +265,22 @@ div.modal-content {
   margin-left: auto; /* Pushes the button to the right */
 }
 
-.cursor-move {
+.cursor-move button.close{
   cursor: move;
+  color: "Red"
 }
+/* Targeting with higher specificity */
+.modal-header .btn-close,  /* Bootstrap 5 uses .btn-close */
+.modal-header button.close { /* Older versions might use button.close */
+  color: red !important; /* Overrides other style specifications */
+}
+
+/* If using SVG within the button (applicable if your close button is an SVG icon) */
+.modal-header .btn-close svg,
+.modal-header button.close svg {
+  fill: red !important; /* Ensures the SVG color changes */
+}
+
 
 @media (max-width: 576px) {
   .toggle-animation-button {
@@ -423,7 +463,7 @@ div.modal-content {
   min-width: 100px; /* Minimum width */
   max-width: 100px; /* Maximum width */
   right: 100px; /* Adjust based on padding and positioning */
-  top: 10px; /* Adjust based on header height */
+  top: 50px; /* Adjust based on header height */
 }
 
 .arrow {

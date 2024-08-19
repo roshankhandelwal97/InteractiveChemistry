@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Modal, Form, Button} from 'react-bootstrap'; 
+import React, { useState } from 'react';
+import { Container, Row, Col, Modal, Button} from 'react-bootstrap'; 
 import MoleculeViewer from './MoleculeViewer';
 import AnimationViewer from './AnimationViewer';
 import ImageRender from './ImageRender';
@@ -40,6 +40,7 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
   return (
     <Container className="molecule-selection-page">
       {pureLipidsData.molecules.map((molecule, index, array) => (
+        <div className="card-style"> {/* Apply the card style */}
         <Row key={index} className={`mb-4 align-items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} ${scrollPosition > (index * 300) ? 'animate' : ''}`}>
           <Col md={4} className="molecule-image">
           <ImageRender
@@ -49,8 +50,9 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
           </Col>
           <Col md={6} className="molecule-info">
             <h2>{molecule.name}</h2>
-            <p>{molecule.description}</p>
-            <Button variant="primary" onClick={() => {
+            <h6 style={{ fontStyle: 'italic', color: '#e23737' }}>{molecule.chemName}</h6>
+            <p style={{ marginBottom: '0.5rem', textAlign: 'justify' }}>{molecule.description}</p>
+            <Button variant="primary" className="explore-button" onClick={() => {
               setSelectedMoleculeFile(molecule.files[0]);
               setShowMainModal(true);
             }}>
@@ -58,14 +60,23 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
             </Button>
           </Col>
         </Row>
+        </div>
       ))}
 
       {selectedMoleculeFile && (
         <Modal show={showMainModal} onHide={handleCloseMainModal} size="lg" fullscreen={true} centered>
-          <Modal.Header closeButton>
-            <Modal.Title>{selectedMoleculeFile.displayName}</Modal.Title>
+          <Modal.Header closeButton className="cursor-move">
+          <Modal.Title style={{
+              flex: '1 1 auto',
+              textAlign: 'center',
+              color: '#d6fb00',  // Set text color to white
+              fontSize: '2rem',  // Increase font size
+              fontWeight: 'bold'  // Make the text bold
+            }}>
+            {selectedMoleculeFile.displayName}
+          </Modal.Title>
             {hasAnimations() && (
-              <Button onClick={handleGoToAnimation} variant="secondary" className="ml-auto toggle-animation-button">
+              <Button onClick={handleGoToAnimation} variant="secondary" className="explore-button">
                 View Animation
               </Button>
             )}
@@ -134,7 +145,7 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
       <Draggable handle=".modal-header">
         <Modal show={showAnimationModal} onHide={handleCloseAnimationModal} dialogClassName="custom-animation-modal-dialog" centered>
       <Modal.Header closeButton className="cursor-move">
-        <Modal.Title style={{ flex: '1 1 auto', textAlign: 'center' }}>{selectedMoleculeFile.animations.title}</Modal.Title>
+        <Modal.Title style={{ flex: '1 1 auto', textAlign: 'center', fontSize: '2.4rem', color:'#d6fb00'}}>{selectedMoleculeFile.animations.title}</Modal.Title>
         <div className="select" style={{ position: 'absolute', right: '0px', top: '10px' }}>
           <div
               className="selected"
