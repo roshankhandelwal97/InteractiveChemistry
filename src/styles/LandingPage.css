@@ -42,7 +42,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.5);
   border-radius: 8px;
-  background-color: transparent; /* Ensure cards do not block the background */
+  background-color: rgba(211,211,211,0.5);
 }
 
 .card:hover {
@@ -51,10 +51,11 @@
 }
 
 .card.disabled {
-  color: #999;
-  border-color: #999;
+  color: #555454;
+  border-color: #d2d0d0f0;
   cursor: not-allowed;
   box-shadow: none;
+  background-color: #e4e1e1f0
 }
 
 .card h2 {

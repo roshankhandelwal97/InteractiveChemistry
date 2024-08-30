@@ -27,8 +27,9 @@ const AnimationViewer = ({ animationPath, label, style }) => {
                         break;
                     case 'sphere':
                         Object.keys(elementColors).forEach(element => {
-                            viewer.setStyle({elem: element}, {sphere: {color: elementColors[element], radius: 1.5}});
+                            viewer.setStyle({elem: element}, {sphere: {color: elementColors[element], lineWidth: 500}});
                         });
+                        viewer.setStyle({ elem: 'P' }, { sphere: { color: 'orange' } });
                         break;
                     case 'stick':
                     default:

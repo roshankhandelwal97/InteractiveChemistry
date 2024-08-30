@@ -50,6 +50,9 @@ body {
   color: #d6fb03;
   margin-top: 1rem;
 }
+p {
+  margin-top: 100;
+}
 
 .molecule-info p {
   font-size: 1.2rem;
@@ -269,17 +272,7 @@ div.modal-content {
   cursor: move;
   color: "Red"
 }
-/* Targeting with higher specificity */
-.modal-header .btn-close,  /* Bootstrap 5 uses .btn-close */
-.modal-header button.close { /* Older versions might use button.close */
-  color: red !important; /* Overrides other style specifications */
-}
 
-/* If using SVG within the button (applicable if your close button is an SVG icon) */
-.modal-header .btn-close svg,
-.modal-header button.close svg {
-  fill: red !important; /* Ensures the SVG color changes */
-}
 
 
 @media (max-width: 576px) {

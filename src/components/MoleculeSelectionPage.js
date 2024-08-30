@@ -66,37 +66,7 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
       {selectedMoleculeFile && (
         <Modal show={showMainModal} onHide={handleCloseMainModal} size="lg" fullscreen={true} centered>
           <Modal.Header closeButton className="cursor-move">
-          <Modal.Title style={{
-              flex: '1 1 auto',
-              textAlign: 'center',
-              color: '#d6fb00',  // Set text color to white
-              fontSize: '2rem',  // Increase font size
-              fontWeight: 'bold'  // Make the text bold
-            }}>
-            {selectedMoleculeFile.displayName}
-          </Modal.Title>
-            {hasAnimations() && (
-              <Button onClick={handleGoToAnimation} variant="secondary" className="explore-button">
-                View Animation
-              </Button>
-            )}
-          </Modal.Header>
-          <Modal.Body>
-            <Container fluid>
-              <Row className="justify-content-md-center">
-                {selectedMoleculeFile.paths && Object.entries(selectedMoleculeFile.paths).map(([key, path]) => (
-                  <Col md={6} key={key} className="mb-3">
-                    <MoleculeViewer 
-                      filePath={path.link}
-                      label={path.title}
-                      style={moleculeStyle}
-                      singleStructure={path.singleStructure}
-                    />
-                  </Col>
-                ))}
-              </Row>
-              <Row className="justify-content-md-center">
-                <div className="select">
+          <div className="select" style={{ position: 'absolute', left: '10px', top: '20%' }}>
                   <div
                     className="selected"
                     onClick={() => setShowOptions(!showOptions)} // Toggle dropdown visibility
@@ -130,6 +100,37 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
                     </div>
                   )}
                 </div>
+          <Modal.Title style={{
+              flex: '1 1 auto',
+              textAlign: 'center',
+              color: '#d6fb00',  // Set text color to white
+              fontSize: '2rem',  // Increase font size
+              fontWeight: 'bold'  // Make the text bold
+            }}>
+            {selectedMoleculeFile.displayName}
+          </Modal.Title>
+            {hasAnimations() && (
+              <Button onClick={handleGoToAnimation} variant="secondary" className="explore-button">
+                View Animation
+              </Button>
+            )}
+          </Modal.Header>
+          <Modal.Body>
+            <Container fluid>
+              <Row className="justify-content-md-center">
+                {selectedMoleculeFile.paths && Object.entries(selectedMoleculeFile.paths).map(([key, path]) => (
+                  <Col md={6} key={key} className="mb-3">
+                    <MoleculeViewer 
+                      filePath={path.link}
+                      label={path.title}
+                      style={moleculeStyle}
+                      singleStructure={path.singleStructure}
+                    />
+                  </Col>
+                ))}
+              </Row>
+              <Row className="justify-content-md-center">
+                
               </Row>
               <Row>
                 <Col>
@@ -145,8 +146,8 @@ const MoleculeSelectionPage = ({ pureLipidsData}) => {
       <Draggable handle=".modal-header">
         <Modal show={showAnimationModal} onHide={handleCloseAnimationModal} dialogClassName="custom-animation-modal-dialog" centered>
       <Modal.Header closeButton className="cursor-move">
-        <Modal.Title style={{ flex: '1 1 auto', textAlign: 'center', fontSize: '2.4rem', color:'#d6fb00'}}>{selectedMoleculeFile.animations.title}</Modal.Title>
-        <div className="select" style={{ position: 'absolute', right: '0px', top: '10px' }}>
+        <Modal.Title style={{ flex: '1 1 auto', textAlign: 'center', fontSize: '2.3rem', color:'#d6fb00'}}>{selectedMoleculeFile.animations.title}</Modal.Title>
+        <div className="select" style={{ position: 'absolute', right: '0px', left: '10px',top: '25px' }}>
           <div
               className="selected"
               onClick={() => setShowAnimationOptions(!showAnimationOptions)} // Toggle dropdown visibility

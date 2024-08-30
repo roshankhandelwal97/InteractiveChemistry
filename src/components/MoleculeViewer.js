@@ -36,7 +36,7 @@ const MoleculeViewer = ({ filePath, style, label, singleStructure }) => {
                         Object.keys(elementColors).forEach(element => {
                             viewer.setStyle({elem: element}, {sphere: {color: elementColors[element], lineWidth: 500}});
                         });
-                        //viewer.setStyle({}, {sphere: {}});
+                        viewer.setStyle({ elem: 'P' }, { sphere: { color: 'orange' } });
                         break;
                     case 'stick':
                     default:

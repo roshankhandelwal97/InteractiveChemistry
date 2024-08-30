@@ -24,7 +24,7 @@
   position: center;
   bottom: 3rem;
   left: 10%;
-  color: var(--text-color-light);
+  color: #d2d0d0f0;
   z-index: 10;
   font-size: 1.6rem;
   font-weight: bold;
@@ -94,9 +94,9 @@
 }
 
 .subheadline {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: #000000f0;
+  color: #d2d0d0f0;
 }
 .subheadline-intro {
   text-align: justify; /* Aligns text to both left and right margins */
@@ -120,7 +120,7 @@
   }
 
   .subheadline {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .subheadline-intro {
     font-size: 0.9rem;
