@@ -40,9 +40,9 @@ const App = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/home">Membrane Nanoplastic Interactions</Nav.Link>
-              <Nav.Link as={Link} to="/pure-lipid-selection">Membrane</Nav.Link>
-              <Nav.Link as={Link} to="/mixture-lipid-selection">Membrane with Polystyrene</Nav.Link>
+              <Nav.Link as={Link} to="/Membrane-Nanoplastic-Interactions">Membrane Nanoplastic Interactions</Nav.Link>
+              <Nav.Link as={Link} to="/Membrane">Membrane</Nav.Link>
+              <Nav.Link as={Link} to="/Membrane-with-Polystyrene">Membrane with Polystyrene</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -50,9 +50,9 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/pure-lipid-selection" element={<PureLipidSelectionPage />} />
-        <Route path="/mixture-lipid-selection" element={<MixtureLipidSelectionPage />} />
+        <Route path="/Membrane-Nanoplastic-Interactions" element={<HomePage />} />
+        <Route path="/Membrane" element={<PureLipidSelectionPage />} />
+        <Route path="/Membrane-with-Polystyrene" element={<MixtureLipidSelectionPage />} />
       </Routes>
     </Router>
   );

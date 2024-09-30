@@ -71,7 +71,7 @@ const pureLipids = {
           description: "The membrane is composed of six distinct lipid types: POPC, POPE, PSM, POPS, PIP2, and CHOL. The structure of each lipid is shown above. In the upper leaflet, the lipid composition is distributed in a ratio of 41:8:23:4:4:20, respectively, while in the lower leaflet, with a ratio of 11:37:5:16:10:21. The system is simulated in water and ion environment for 1.2 us.",
           paths: {
             path1: {
-              link: "/lipids/pureLipids/POPC.pdb",
+              link: "/lipids/pureLipids/popc.pdb",
               title: "POPC",
               singleStructure: "Y"
             },

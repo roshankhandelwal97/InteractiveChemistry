@@ -72,3 +72,40 @@
   font-size: 1rem;
   color: #777;
 }
+
+/* Counter CSS */
+
+.hit-counter {
+  position: absolute;
+  top: 700px; /* Adjust based on your navbar height */
+  left: 1300px; /* Distance from the right edge */
+  text-align: center;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.hit-counter .powr-hit-counter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hit-counter .powr-icon {
+  display: none; /* Hides the counter logo */
+}
+
+.counter-label {
+  font-size: 1rem;
+  color: #d2d0d0f0;
+  margin-top: 4px;
+  right: 100px
+}
+
+.hit-counter .logo-cover {
+  position: absolute;
+  top: 0; /* Adjust these values to cover the logo correctly */
+  right: 0; /* Align with the right edge of the .powr-hit-counter */
+  width: 90px; /* Approximate width of the logo */
+  height: 50px; /* Approximate height of the logo */
+  background-color: #2a4163; /* Match the page background or any suitable color */
+  z-index: 1010; /* Higher z-index to cover the logo */
+}

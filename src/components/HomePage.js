@@ -31,7 +31,7 @@ const HomePage = () => {
             including phthalates. Biological membranes represent the first line of defense against such foreign particles, playing a crucial role in mitigating the entry and subsequent effects of these potentially hazardous substances at the cellular level. The ongoing accumulation of PS in marine environments highlights the urgent 
             need for comprehensive strategies to address plastic pollution and protect marine ecosystems.</p>
             <Row className="mt-4 g-4 justify-content-center">
-              <Col md={6} lg={4} onClick={() => navigateTo('/pure-lipid-selection')}>
+              <Col md={6} lg={4} onClick={() => navigateTo('/Membrane')}>
                 <div className="custom-card">
                   <div className="custom-card-img">
                     <ImageRender
@@ -47,7 +47,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </Col>
-              <Col md={6} lg={4} onClick={() => navigateTo('/mixture-lipid-selection')}>
+              <Col md={6} lg={4} onClick={() => navigateTo('/Membrane-with-Polystyrene')}>
                 <div className="custom-card">
                   <div className="custom-card-img">
                     <ImageRender
